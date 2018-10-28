@@ -49,6 +49,8 @@ def parser_bourse(symbol, début, fin):
     response = requests.get(url=url, params=params)
     response = json.loads(response.text)
 
+    ## ajouter le truc pour valeur
+
 
 
 
