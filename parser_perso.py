@@ -55,4 +55,7 @@ def parser_bourse(symbol, début, fin):
 
 
 if __name__ == '__main__':
-    print('allo')
+    if args.valeur:
+        ## mettre output de valeur ici
+    else:
+        ## output normal sans avoir callé le -v
