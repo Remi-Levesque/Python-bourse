@@ -59,3 +59,5 @@ if __name__ == '__main__':
         ## mettre output de valeur ici
     else:
         ## output normal sans avoir callé le -v
+
+        pipi caca
