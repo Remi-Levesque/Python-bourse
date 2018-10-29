@@ -60,4 +60,4 @@ if __name__ == '__main__':
     else:
         ## output normal sans avoir callé le -v
 
-        pipi caca
+        pipi caca±
