@@ -58,4 +58,4 @@ if __name__ == '__main__':
     if args.valeur:
         ## mettre output de valeur ici
     else:
-        ## output normal sans avoir callé le -v±±±±±
+        ## output normal sans avoir callé le -v
