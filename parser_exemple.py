@@ -4,7 +4,7 @@ import json
 
 url = 'https://www.alphavantage.co/query'
 function = 'TIME_SERIES_DAILY'
-apikey = '3™±PQRLNKE9VP5JH12'
+apikey = '3PQRLNKE9VP5JH12'
 
 
 symbol = 'goog'
