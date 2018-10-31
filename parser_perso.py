@@ -41,9 +41,11 @@ if val == "f":
 
 ## si on a pas d'input de début OU fin, on set à la date d'aujourd'hui
 
-if args.début == None or args.fin == None:
+if args.début == None:
     début = datetime.time.today()
     fin = début
+if args.fin == None:
+    fin = datetime.time.today()
 
 ## fonction du calcul boursier
 
