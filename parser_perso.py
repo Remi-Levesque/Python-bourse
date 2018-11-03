@@ -14,15 +14,18 @@ now = datetime.date.today()
 # création du parser et ajout arguments à accepter (début, fin, valeur, help):
 
 parser = argparse.ArgumentParser(
-    description="Extraction de valeurs historiques pour un symbole boursier", conflict_handler='resolve')
+    description="Extraction de valeurs historiques pour un symbole boursier",
+    conflict_handler='resolve')
 parser.add_argument('symbole', type=str, nargs='+',
                     help="Nom du symbole boursier désiré")
 parser.add_argument('-d',  '--début', type=str,
-                    help="Date recherchée la plus ancienne (format: AAAA-MM-JJ)")
+                    help="Date recherchée la plus ancienne (format: AAAA-MM-JJ)"
+                    )
 parser.add_argument('-f', '--fin', type=str,
                     help="Date recherchée la plus récente (format: AAAA-MM-JJ)")
-parser.add_argument('-v', '--valeur', nargs=1, type=str, default='fermeture', choices=[
-                    'fermeture', 'ouverture', 'min', 'max', 'volume'], help="La valeur désirée (par défaut: fermeture)")
+parser.add_argument('-v', '--valeur', nargs=1, type=str, default='fermeture',
+                    choices=['fermeture', 'ouverture', 'min', 'max', 'volume'],
+                    help="La valeur désirée(par défaut: fermeture)")
 args = parser.parse_args()
 
 # fonction pour convertir l'input de la date en datetime.date
@@ -48,10 +51,10 @@ if val == "f":
 
 # si on a pas d'input de début OU fin, on set à la date d'aujourd'hui
 
-if args.début == None:
+if args.début is None:
     début = datetime.time.today()
     fin = début
-if args.fin == None:
+if args.fin is None:
     fin = datetime.time.today()
 
 # fonction du calcul boursier
@@ -92,7 +95,7 @@ def calcul_boursier(symbole):
         # connection serveur
         response = requests.get(url=url, params=params)  # type: object
         response = json.loads(response.text)
-        # renvoi de message d'erreur si impossible de se connecter à Alphavantage
+    # renvoi de message d'erreur si impossible de se connecter à Alphavantage
         tuple1 = (
             str(début), response['Time Series (Daily)'][str(début)][str(v)])
         tuple2 = (str(fin), response['Time Series (Daily)'][str(fin)][str(v)])
@@ -101,5 +104,5 @@ def calcul_boursier(symbole):
 
 
 if __name__ == '__main__':
-    # on éxécute la fonction calcul_boursier à l'appel du programme dans le terminal
+    # on éxécute la fonction calcul_boursier à l'appel du programme dans le term
     calcul_boursier(args.symbole)
