@@ -25,7 +25,8 @@ parser.add_argument('-f', '--fin', type=str,
                     help="Date recherchée la plus récente (format: AAAA-MM-JJ)")
 parser.add_argument('-v', '--valeur', nargs=1, type=str, default='fermeture',
                     choices=['fermeture', 'ouverture', 'min', 'max', 'volume'],
-                    help="La valeur désirée(par défaut: fermeture)")
+                    help="La valeur désirée(par défaut: fermeture)",
+                    metavar='DATE')
 args = parser.parse_args()
 
 # fonction pour convertir l'input de la date en datetime.date
