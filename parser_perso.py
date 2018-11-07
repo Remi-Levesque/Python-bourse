@@ -67,7 +67,7 @@ def calcul_boursier(symbole):
 
     # on set tdelta à la différence entre la fin et le début
 
-    if tdelta > datetime.timedelta(days=100):
+    if now - début > (100/5)*7:
         size = 'full'
 
     # plusieurs if statements pour les différents input de -v
